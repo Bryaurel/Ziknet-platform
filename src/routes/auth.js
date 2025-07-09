@@ -22,7 +22,17 @@ router.post("/register", async (req, res) => {
   const newUser = { id: users.length + 1, email, password: hashedPassword };
   users.push(newUser);
 
-  res.status(201).json({ message: "User registered successfully" });
+  // Generate token for new user
+  const token = jwt.sign(
+    { id: newUser.id, email: newUser.email },
+    process.env.JWT_SECRET || "secret",
+    { expiresIn: "1h" }
+  );
+
+  res.status(201).json({
+    message: "User registered successfully",
+    token: token
+  });
 });
 
 // Login
@@ -35,7 +45,11 @@ router.post("/login", async (req, res) => {
   if (!validPassword)
     return res.status(401).json({ message: "Invalid credentials" });
 
-  const token = jwt.sign({ id: user.id, email: user.email }, process.env.JWT_SECRET || "secret", { expiresIn: "1h" });
+  const token = jwt.sign(
+    { id: user.id, email: user.email },
+    process.env.JWT_SECRET || "secret",
+    { expiresIn: "1h" }
+  );
 
   res.json({ token });
 });
