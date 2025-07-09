@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ziknet Token Test</title>
+</head>
+<body>
+  <button onclick="fetchProfile()">Fetch Profile</button>
+
+  <pre id="output"></pre>
+
+  <script>
+    async function fetchProfile() {
+      const res = await fetch("http://localhost:3000/profile", {
+        method: "GET",
+        headers: {
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzUyMDI1NzM2LCJleHAiOjE3NTIwMjkzMzZ9.uA2jidOmuVtS05wzocRCKoI2e2gECwP3wakapNrtedU"
+        }
+      });
+
+      const data = await res.json();
+      document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+    }
+  </script>
+</body>
+</html>
