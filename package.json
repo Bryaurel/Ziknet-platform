@@ -4,8 +4,8 @@
     "description": "ZIKNET - Social platform for musicians and music lovers",
     "main": "src/app.js",
     "scripts": {
-        "start": "node src/app.js",
-        "dev": "nodemon src/app.js",
+        "start": "node src/server.js",
+        "dev": "nodemon src/server.js",
         "lint": "eslint .",
         "test": "jest"
     },
@@ -21,9 +21,10 @@
     "dependencies": {
         "bcryptjs": "^2.4.3",
         "cors": "^2.8.5",
-        "dotenv": "^16.0.3",
+        "dotenv": "^16.6.1",
         "express": "^4.18.2",
         "jsonwebtoken": "^9.0.0",
+        "mongodb": "^6.17.0",
         "mongoose": "^7.8.7"
     },
     "devDependencies": {
