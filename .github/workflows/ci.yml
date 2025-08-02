@@ -1,13 +1,31 @@
-name: CI Pipeline
+name: Node.js CI Pipeline
 
-on: [pull_request]
+on:
+  pull_request:
+    branches: [main, develop]
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-      - name: Run a test
-        run: echo "✅ CI running!"
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run ESLint
+        run: |
+          npx eslint . || true
+
+      - name: Run Tests
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI_TEST }}
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
+        run: npm test
