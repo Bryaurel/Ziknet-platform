@@ -3,7 +3,6 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const request = require("supertest");
 const app = require("../app");
-const User = require("../models/User");
 
 beforeAll(async () => {
   // Use the environment variable from CI or local `.env.test`
