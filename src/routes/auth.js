@@ -61,7 +61,7 @@ router.post("/register", async (req, res) => {
     });
 
   } catch (error) {
-    console.error("Registration error:", error);
+    console.error("Registration error:", error); // ✅ now used
     res.status(500).json({ message: "Server error" });
   }
 });
@@ -104,17 +104,18 @@ router.post("/login", async (req, res) => {
     });
 
   } catch (error) {
-    console.error("Login error:", error);
+    console.error("Login error:", error); // ✅ now used
     res.status(500).json({ message: "Server error" });
   }
 });
 
-//Get all users
+// Get all users
 router.get("/users", async (req, res) => {
   try {
     const users = await User.find().select("-password"); // Exclude passwords
     res.status(200).json(users);
   } catch (error) {
+    console.error("Get users error:", error); // ✅ added logging
     res.status(500).json({ message: "Server error" });
   }
 });
