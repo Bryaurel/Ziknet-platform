@@ -1,0 +1,4 @@
+MONGO_URI=mongodb+srv://bryaurel:Basketball2.0@ziknet-cluster.9fpatqi.mongodb.net/?retryWrites=true&w=majority&appName=Ziknet-Cluster
+PORT=3000
+JWT_SECRET=Basketball2.0
+NODE_ENV=production

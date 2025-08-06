@@ -1,2 +1,12 @@
 node_modules
+npm-debug.log
+Dockerfile
+docker-compose.yml
+.git
+.gitignore
 .env
+.env.test
+terraform/
+.eslintrc.js
+eslint.config.mjs
+src/tests
