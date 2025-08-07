@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Node.js
 node_modules/
 .env
@@ -12,8 +11,3 @@ terraform/*.tfstate.backup
 terraform/*.tfvars                   
 !terraform/*.tf                      
 !terraform/deploy.ps1
-=======
-node_modules/
-.env
-src/tests/.env.test
->>>>>>> b8fcbae96ff9a6006237ec35799f7092920ce0bc
