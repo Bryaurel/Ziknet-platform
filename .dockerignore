@@ -1,5 +1,4 @@
 node_modules
-<<<<<<< HEAD
 npm-debug.log
 Dockerfile
 docker-compose.yml
@@ -11,6 +10,3 @@ terraform/
 .eslintrc.js
 eslint.config.mjs
 src/tests
-=======
-.env
->>>>>>> b8fcbae96ff9a6006237ec35799f7092920ce0bc
