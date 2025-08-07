@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 services:
   backend:
     build:
@@ -13,3 +14,17 @@ services:
       - .:/app
       - /app/node_modules
     command: node src/server.js
+=======
+version: '3'
+services:
+  ziknet-backend:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - PORT=3000
+      - JWT_SECRET=secret
+>>>>>>> b8fcbae96ff9a6006237ec35799f7092920ce0bc
