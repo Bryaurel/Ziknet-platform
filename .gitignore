@@ -1,5 +1,13 @@
+# Node.js
 node_modules/
 .env
 src/tests/.env.test
-terraform/terraform.tfvars
-terraform/
+
+# Terraform
+terraform/.terraform/               
+terraform/.terraform.lock.hcl       
+terraform/*.tfstate                  
+terraform/*.tfstate.backup
+terraform/*.tfvars                   
+!terraform/*.tf                      
+!terraform/deploy.ps1
